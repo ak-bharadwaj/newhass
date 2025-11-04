@@ -245,7 +245,7 @@ export default function ReceptionDashboard() {
 
       {/* Actions */}
             {/* Filter bar */}
-      <div className={`glass backdrop-blur-xl border shadow-lg rounded-2xl p-4 mx-6 ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
+      <div className="glass backdrop-blur-xl border shadow-lg rounded-2xl p-4 mx-6 theme-glass">
         <div className="container mx-auto px-2">
           <div className="flex items-center gap-3 flex-wrap">
             <FeedbackButton
