@@ -271,7 +271,7 @@ export default function NurseDashboard() {
               >
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-lg font-semibold flex items-center gap-2 theme-text-primary">
-                    <svg className={`w-5 h-5 ${isDark ? 'text-primary-400' : 'text-primary-600'}`} fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 theme-text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                     </svg>
                     My Patients
