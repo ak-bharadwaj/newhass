@@ -212,41 +212,99 @@ export default function NurseDashboard() {
       {/* Regional Banner */}
       <RegionalBanner />
 
-      {/* Header */}
-      <SectionHeader
-        title="Nurse Dashboard"
-        subtitle={`Welcome, Nurse ${user.first_name} ${user.last_name}`}
-        chips={[{ label: 'Live', color: 'blue' }, { label: new Date().toLocaleDateString(), color: 'gray' }]}
-      />
-
       {/* Real-time emergency alert system */}
       <RealTimeAlerts />
       <SSEConnectionStatus isConnected={isConnected} />
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <div className="glass rounded-xl px-6 py-4 theme-gradient-success">
-          <p className="text-lg font-bold theme-text-primary">{patients.length}</p>
-          <p className="theme-text-secondary">Patients Assigned</p>
-        </div>
-        <div className="glass rounded-xl px-6 py-4 theme-gradient-primary">
-          <p className="text-lg font-bold theme-text-primary">{tasks.length}</p>
-          <p className="theme-text-secondary">Pending Tasks</p>
-        </div>
-        <div className="glass rounded-xl px-6 py-4 theme-gradient-accent">
-          <Link href="/dashboard/nurse/case-sheets" className="block hover:scale-105 transition-transform">
-            <p className="text-lg font-bold theme-text-primary">Case Sheets</p>
-            <p className="theme-text-secondary">View Records</p>
-          </Link>
-        </div>
-        <button
-          onClick={() => setShowVoiceInput(true)}
-          className="glass rounded-xl px-6 py-4 hover:scale-105 transition-transform text-left theme-gradient-warning"
-        >
-          <p className="text-lg font-bold theme-text-primary">🎤 Voice Input</p>
-          <p className="theme-text-secondary">Quick Vitals Entry</p>
-        </button>
-      </div>
+      <StandardDashboardLayout
+        title="Nurse Dashboard"
+        subtitle={`Welcome, Nurse ${user.first_name} ${user.last_name}`}
+        chips={[
+          { label: 'Live', color: 'blue' },
+          { label: new Date().toLocaleDateString() }
+        ]}
+        actions={
+          <>
+            <FeedbackButton
+              onClick={() => selectedPatient && openVitalsModal(selectedPatient)}
+              disabled={!selectedPatient || isLoading}
+              variant="primary"
+              className="shadow-sm"
+            >
+              📊 Record Vitals
+            </FeedbackButton>
+            <FeedbackButton
+              onClick={() => setShowVoiceInput(true)}
+              disabled={!selectedPatient || isLoading}
+              variant="primary"
+              className="shadow-sm theme-btn-accent"
+            >
+              🎤 Voice Input
+            </FeedbackButton>
+            <FeedbackButton
+              onClick={() => setShowNurseLogModal(true)}
+              disabled={!selectedPatient || isLoading}
+              variant="secondary"
+              className="shadow-sm"
+            >
+              📝 Add Log
+            </FeedbackButton>
+            <div className="ml-auto flex items-center gap-2">
+              <Link href="/dashboard/nurse/case-sheets" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Case Sheets</Link>
+              <Link href="/dashboard/nurse/tasks" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Tasks</Link>
+              <Link href="/dashboard/nurse/vitals" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Vitals</Link>
+            </div>
+          </>
+        }
+        showStats={true}
+        stats={
+          <>
+            <StandardCard hover>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="theme-text-secondary">Patients Assigned</p>
+                  <p className="text-3xl font-bold theme-text-primary">{patients.length}</p>
+                </div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-success-subtle theme-text-primary">👥</div>
+              </div>
+            </StandardCard>
+            <StandardCard hover>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="theme-text-secondary">Pending Tasks</p>
+                  <p className="text-3xl font-bold theme-text-primary">{tasks.length}</p>
+                </div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-primary-subtle theme-text-primary">📋</div>
+              </div>
+            </StandardCard>
+            <StandardCard hover>
+              <Link href="/dashboard/nurse/case-sheets" className="block">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="theme-text-secondary">Case Sheets</p>
+                    <p className="text-3xl font-bold theme-text-primary">View</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-accent-subtle theme-text-primary">📄</div>
+                </div>
+              </Link>
+            </StandardCard>
+            <StandardCard hover>
+              <button
+                onClick={() => setShowVoiceInput(true)}
+                className="w-full text-left"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="theme-text-secondary">Voice Input</p>
+                    <p className="text-xl font-bold theme-text-primary">🎤</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-warning-subtle theme-text-primary">🎤</div>
+                </div>
+              </button>
+            </StandardCard>
+          </>
+        }
+      >
 
       {/* Main Content */}
       {patients.length === 0 ? (
