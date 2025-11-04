@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useAuth } from '@/contexts/AuthContext'
+import { EnterpriseDashboardLayout } from '@/components/dashboard/EnterpriseDashboardLayout'
+import { StandardCard, StandardDashboardLayout } from '@/components/dashboard/StandardGridLayout'
 import { apiClient, type CaseSheetResponse } from '@/lib/api'
 import { DashboardSkeleton } from '@/components/common/LoadingSkeletons'
 import { FeedbackButton } from '@/components/common/FeedbackButton'
