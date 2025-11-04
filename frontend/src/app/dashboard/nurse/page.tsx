@@ -301,7 +301,7 @@ export default function NurseDashboard() {
                     </FeedbackButton>
                     <FeedbackButton
                       onClick={() => setShowNurseLogModal(true)}
-                      disabled={!selectedPatient}
+                      disabled={!selectedPatient || isLoading}
                       variant="secondary"
                       className="shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
                     >
