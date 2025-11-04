@@ -510,7 +510,7 @@ export default function DoctorDashboard() {
                   <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Case Sheets</p>
                   <p className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>View</p>
                 </div>
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl ${isDark ? 'bg-emerald-900/40 text-emerald-400' : 'bg-emerald-600/10 text-emerald-700'}`}>📄</div>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-success-subtle theme-text-primary`}>📄</div>
               </div>
             </Link>
           </CardContent>
