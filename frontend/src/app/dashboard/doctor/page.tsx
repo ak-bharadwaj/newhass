@@ -507,8 +507,8 @@ export default function DoctorDashboard() {
             <Link href="/dashboard/doctor/case-sheets" className="block">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Case Sheets</p>
-                  <p className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>View</p>
+                  <p className="theme-text-secondary">Case Sheets</p>
+                  <p className="text-3xl font-bold theme-text-primary">View</p>
                 </div>
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-success-subtle theme-text-primary`}>📄</div>
               </div>
