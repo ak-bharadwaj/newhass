@@ -224,7 +224,7 @@ export default function NurseDashboard() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <div className={`glass rounded-xl px-6 py-4 ${isDark ? 'bg-gradient-to-br from-green-900/40 to-green-800/40 border border-green-700/50' : 'bg-gradient-to-br from-green-50 to-green-100 border border-green-200'}`}>
+        <div className="glass rounded-xl px-6 py-4 theme-gradient-success">
           <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{patients.length}</p>
           <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Patients Assigned</p>
         </div>
