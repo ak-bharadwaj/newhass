@@ -351,6 +351,17 @@ button, a, input, select, textarea {
   border: 1px solid rgba(var(--color-border), 0.9);
 }
 
+/* Enhanced theme text utility classes for consistent readability */
+.theme-text-primary {
+  color: rgb(var(--color-foreground));
+  font-weight: 500;
+}
+
+.theme-text-secondary {
+  color: rgba(var(--color-muted-foreground), 0.9);
+  font-weight: 400;
+}
+
 .theme-text { color: rgb(var(--color-foreground)); }
 .theme-muted { color: rgba(var(--color-muted-foreground), 0.9); }
 .theme-border { border-color: rgb(var(--color-border)); }
