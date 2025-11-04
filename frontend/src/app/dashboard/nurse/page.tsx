@@ -229,8 +229,8 @@ export default function NurseDashboard() {
           <p className="theme-text-secondary">Patients Assigned</p>
         </div>
         <div className="glass rounded-xl px-6 py-4 theme-gradient-primary">
-          <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{tasks.length}</p>
-          <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Pending Tasks</p>
+          <p className="text-lg font-bold theme-text-primary">{tasks.length}</p>
+          <p className="theme-text-secondary">Pending Tasks</p>
         </div>
         <div className={`glass rounded-xl px-6 py-4 ${isDark ? 'bg-gradient-to-br from-purple-900/40 to-purple-800/40 border border-purple-700/50' : 'bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200'}`}>
           <Link href="/dashboard/nurse/case-sheets" className="block hover:scale-105 transition-transform">
