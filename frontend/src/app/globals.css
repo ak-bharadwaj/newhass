@@ -66,15 +66,34 @@
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
 
-  /* Dark mode colors */
+  /* Dark mode colors - Enhanced for accessibility */
   --color-background: 15, 23, 42;
   --color-foreground: 248, 250, 252;
   --color-muted: 30, 41, 59;
+  --color-muted-foreground: 148, 163, 184;
   --color-border: 51, 65, 85;
-  --color-primary: 59, 130, 246;
-  --color-success: 34, 197, 94;
-  --color-warning: 234, 179, 8;
-  --color-error: 239, 68, 68;
+  --color-primary: 96, 165, 250;
+  --color-primary-foreground: 15, 23, 42;
+  --color-success: 74, 222, 128;
+  --color-success-foreground: 15, 23, 42;
+  --color-warning: 251, 191, 36;
+  --color-warning-foreground: 15, 23, 42;
+  --color-error: 248, 113, 113;
+  --color-error-foreground: 15, 23, 42;
+  --color-accent: 196, 181, 253;
+  --color-accent-foreground: 15, 23, 42;
+
+  /* Extended color palette for consistent gradients (dark mode) */
+  --color-primary-light: 147, 197, 253;
+  --color-primary-dark: 59, 130, 246;
+  --color-success-light: 134, 239, 172;
+  --color-success-dark: 34, 197, 94;
+  --color-warning-light: 252, 211, 77;
+  --color-warning-dark: 245, 158, 11;
+  --color-error-light: 252, 165, 165;
+  --color-error-dark: 239, 68, 68;
+  --color-accent-light: 221, 214, 254;
+  --color-accent-dark: 167, 139, 250;
 }
 
 /* High Contrast Mode - Enhanced for better readability */
