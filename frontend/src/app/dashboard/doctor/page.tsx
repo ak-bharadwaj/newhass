@@ -482,9 +482,9 @@ export default function DoctorDashboard() {
             🚪 Discharge Patient
           </FeedbackButton>
           <div className="ml-auto flex items-center gap-2">
-            <Link href="/dashboard/doctor/patients" className="px-3 py-2 text-sm rounded-lg border hover:bg-gray-50">Patients</Link>
-            <Link href="/dashboard/doctor/appointments" className="px-3 py-2 text-sm rounded-lg border hover:bg-gray-50">Appointments</Link>
-            <Link href="/dashboard/doctor/prescriptions" className="px-3 py-2 text-sm rounded-lg border hover:bg-gray-50">Prescriptions</Link>
+            <Link href="/dashboard/doctor/patients" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Patients</Link>
+            <Link href="/dashboard/doctor/appointments" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Appointments</Link>
+            <Link href="/dashboard/doctor/prescriptions" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Prescriptions</Link>
           </div>
         </div>
       </div>
