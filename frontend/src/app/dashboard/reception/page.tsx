@@ -39,8 +39,26 @@ export default function ReceptionDashboard() {
   })
 
   useEffect(() => {
-    loadAppointments()
-    loadDoctors()
+    // Load appointments and doctors in parallel for better performance
+    const loadData = async () => {
+      if (!token || !user?.hospital_id) return
+      try {
+        setIsLoading(true)
+        setError(null)
+
+        // Load appointments and doctors in parallel
+        await Promise.all([
+          loadAppointments(),
+          loadDoctors()
+        ])
+      } catch (err: any) {
+        setError(err.message || 'Failed to load data')
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadData()
   }, [selectedDate])
 
   const loadAppointments = async () => {
