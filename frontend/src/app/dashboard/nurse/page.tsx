@@ -179,7 +179,7 @@ export default function NurseDashboard() {
 
   if (isLoading) {
     return (
-      <div className={`min-h-screen p-8 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20' : 'bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50'}`}>
+      <div className="min-h-screen p-8 theme-gradient-bg">
         <DashboardSkeleton />
       </div>
     )
