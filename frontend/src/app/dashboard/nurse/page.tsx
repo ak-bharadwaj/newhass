@@ -20,7 +20,6 @@ import { Modal } from '@/components/dashboard/Modal'
 import { VoiceVitalsInput } from '@/components/clinical/VoiceVitalsInput'
 import { useTheme } from '@/lib/themeUtils'
 import Link from 'next/link'
-import SectionHeader from '@/components/common/SectionHeader'
 
 export default function NurseDashboard() {
   const { user, token } = useAuth()
