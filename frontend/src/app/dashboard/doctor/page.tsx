@@ -536,19 +536,12 @@ export default function DoctorDashboard() {
                     View all
                   </Link>
                 }
-              >
-              {/* Today's Schedule */}
-              <div className={`glass backdrop-blur-xl rounded-2xl shadow-xl p-4 border ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
-                <div className="flex items-center justify-between mb-3">
-                  <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Today&apos;s Schedule</h2>
-                  <Link href="/dashboard/doctor/appointments" className="text-xs font-semibold text-primary-600 hover:underline">View all</Link>
-                </div>
-                {isLoadingSchedule ? (
-                  <div className="h-24 flex items-center justify-center text-sm text-gray-500">Loading...</div>
+                  {isLoadingSchedule ? (
+                  <div className="h-24 flex items-center justify-center text-sm theme-text-secondary">Loading...</div>
                 ) : scheduleError ? (
                   <div className="text-sm text-error-600">{scheduleError}</div>
                 ) : schedule.length === 0 ? (
-                  <div className="text-sm text-gray-500">No appointments scheduled for today.</div>
+                  <div className="text-sm theme-text-secondary">No appointments scheduled for today.</div>
                 ) : (
                   <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
                     {schedule.map((appt) => {
@@ -557,53 +550,53 @@ export default function DoctorDashboard() {
                       const time = `${start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - ${end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
                       const status = (appt.status || 'scheduled').toLowerCase()
                       const statusClass = status === 'completed'
-                        ? 'bg-emerald-100 text-emerald-700'
+                        ? 'theme-btn-success'
                         : status === 'in_progress'
-                        ? 'bg-blue-100 text-blue-700'
+                        ? 'theme-btn-primary'
                         : status === 'checked_in'
-                        ? 'bg-amber-100 text-amber-700'
+                        ? 'theme-btn-warning'
                         : status === 'cancelled' || status === 'no_show'
-                        ? 'bg-red-100 text-red-700'
-                        : 'bg-gray-100 text-gray-700'
+                        ? 'theme-btn-error'
+                        : 'theme-card'
                       return (
-                        <div key={appt.id} className={`rounded-xl border ${isDark ? 'border-gray-700/50' : 'border-gray-200'} p-3 hover:bg-gray-50/60`}> 
+                        <div key={appt.id} className="rounded-xl border theme-border p-3 hover:bg-gray-50/60">
                           <div className="flex items-start justify-between gap-2">
                             <div>
-                              <div className="text-sm font-semibold text-gray-900 flex items-center gap-2">
-                                <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold bg-white border border-gray-200">{time}</span>
-                                <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold border bg-white text-primary-700 border-primary-200">{appt.appointment_type}</span>
+                              <div className="text-sm font-semibold theme-text-primary flex items-center gap-2">
+                                <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold theme-card border theme-border">{time}</span>
+                                <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold theme-btn-primary">{appt.appointment_type}</span>
                               </div>
-                              <div className="mt-1 text-sm text-gray-700">
+                              <div className="mt-1 text-sm theme-text-secondary">
                                 {appt.patient_name} <span className="text-gray-400">•</span> MRN {appt.patient_mrn}
                               </div>
                               {appt.reason && (
-                                <div className="text-xs text-gray-500 mt-0.5 truncate">{appt.reason}</div>
+                                <div className="text-xs theme-text-muted mt-0.5 truncate">{appt.reason}</div>
                               )}
                               {/* Inline actions */}
                               <div className="mt-2 flex items-center gap-2 flex-wrap">
                                 {status === 'scheduled' && (
                                   <>
-                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCheckIn(appt)} className="text-xs px-2 py-1 rounded-md bg-amber-100 text-amber-800 border border-amber-200 hover:bg-amber-200 disabled:opacity-60">Check-in</button>
-                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCancel(appt)} className="text-xs px-2 py-1 rounded-md bg-red-100 text-red-800 border border-red-200 hover:bg-red-200 disabled:opacity-60">Cancel</button>
+                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCheckIn(appt)} className="text-xs px-2 py-1 rounded-md theme-btn-warning disabled:opacity-60">Check-in</button>
+                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCancel(appt)} className="text-xs px-2 py-1 rounded-md theme-btn-error disabled:opacity-60">Cancel</button>
                                   </>
                                 )}
                                 {status === 'checked_in' && (
                                   <>
-                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleStart(appt)} className="text-xs px-2 py-1 rounded-md bg-blue-100 text-blue-800 border border-blue-200 hover:bg-blue-200 disabled:opacity-60">Start</button>
-                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCancel(appt)} className="text-xs px-2 py-1 rounded-md bg-red-100 text-red-800 border border-red-200 hover:bg-red-200 disabled:opacity-60">Cancel</button>
+                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleStart(appt)} className="text-xs px-2 py-1 rounded-md theme-btn-primary disabled:opacity-60">Start</button>
+                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCancel(appt)} className="text-xs px-2 py-1 rounded-md theme-btn-error disabled:opacity-60">Cancel</button>
                                   </>
                                 )}
                                 {status === 'in_progress' && (
                                   <>
-                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleComplete(appt)} className="text-xs px-2 py-1 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-200 hover:bg-emerald-200 disabled:opacity-60">Complete</button>
-                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCancel(appt)} className="text-xs px-2 py-1 rounded-md bg-red-100 text-red-800 border border-red-200 hover:bg-red-200 disabled:opacity-60">Cancel</button>
+                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleComplete(appt)} className="text-xs px-2 py-1 rounded-md theme-btn-success disabled:opacity-60">Complete</button>
+                                    <button disabled={scheduleActionId === appt.id} onClick={() => handleCancel(appt)} className="text-xs px-2 py-1 rounded-md theme-btn-error disabled:opacity-60">Cancel</button>
                                   </>
                                 )}
                               </div>
                             </div>
                             <div className="flex flex-col items-end gap-2">
                               <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold ${statusClass}`}>{status.replace('_',' ')}</span>
-                              <Link href={`/dashboard/doctor/patients/${appt.patient_id}`} className="text-xs font-semibold text-primary-600 hover:underline">Open</Link>
+                              <Link href={`/dashboard/doctor/patients/${appt.patient_id}`} className="text-xs font-semibold theme-btn-primary hover:underline">Open</Link>
                             </div>
                           </div>
                         </div>
@@ -611,18 +604,14 @@ export default function DoctorDashboard() {
                     })}
                   </div>
                 )}
-              </div>
+              </StandardCard>
 
               {/* 30-min Day Chart */}
-              <DayScheduleChart appointments={schedule} className="border-gray-100" />
+              <StandardCard>
+                <DayScheduleChart appointments={schedule} />
+              </StandardCard>
 
-              <div className={`glass backdrop-blur-xl rounded-2xl shadow-xl p-4 border ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
-                <h2 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  <svg className={`w-5 h-5 ${isDark ? 'text-primary-400' : 'text-primary-600'}`} fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
-                  My Patients
-                </h2>
+              <StandardCard title="My Patients">
                 <div className="space-y-3 max-h-[calc(100vh-240px)] overflow-y-auto pr-2">
                   {patients.map((patient, index) => (
                     <motion.div
@@ -639,14 +628,12 @@ export default function DoctorDashboard() {
                     </motion.div>
                   ))}
                 </div>
-              </div>
+              </StandardCard>
 
               {/* AI Drafts Queue */}
               <AIDraftsQueue />
-            </motion.div>
-
-            {/* Right panel - Patient details */}
-            <div className="col-span-12 lg:col-span-8">
+            </div>
+          }
               <AnimatePresence mode="wait">
                 {selectedPatient ? (
                   <motion.div
