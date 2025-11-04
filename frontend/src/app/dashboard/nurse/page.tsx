@@ -279,7 +279,7 @@ export default function NurseDashboard() {
                   <div className="flex gap-2 flex-wrap">
                     <FeedbackButton
                       onClick={() => selectedPatient && openVitalsModal(selectedPatient)}
-                      disabled={!selectedPatient}
+                      disabled={!selectedPatient || isLoading}
                       variant="primary"
                       className="shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all"
                     >
