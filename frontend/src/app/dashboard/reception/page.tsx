@@ -261,7 +261,7 @@ export default function ReceptionDashboard() {
             <FeedbackButton
               onClick={() => setIsBookingModalOpen(true)}
               variant="primary"
-              className="shadow-xl bg-gradient-to-r from-primary-500 to-purple-600 hover:from-primary-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold"
+              className="shadow-xl theme-btn-primary px-6 py-3 rounded-xl font-semibold"
             >
               + Book Appointment
             </FeedbackButton>
