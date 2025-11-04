@@ -61,15 +61,19 @@
   --color-error: 239, 68, 68;
 }
 
-/* High Contrast Mode */
+/* High Contrast Mode - Enhanced for better readability */
 .high-contrast {
   --color-border: 0, 0, 0;
   --color-primary: 0, 0, 255;
+  --color-background: 255, 255, 255;
+  --color-foreground: 0, 0, 0;
 }
 
 .dark.high-contrast {
   --color-border: 255, 255, 255;
   --color-primary: 100, 200, 255;
+  --color-background: 0, 0, 0;
+  --color-foreground: 255, 255, 255;
 }
 
 /* Larger Text Mode */
