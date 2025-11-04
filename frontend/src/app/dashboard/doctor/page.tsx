@@ -522,7 +522,7 @@ export default function DoctorDashboard() {
                 <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Pending Rx (Selected)</p>
                 <AnimatedNumber value={prescriptions.filter(p => p.status === 'pending').length} className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`} />
               </div>
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl ${isDark ? 'bg-purple-900/40 text-purple-400' : 'bg-purple-600/10 text-purple-700'}`}>💊</div>
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-accent-subtle theme-text-primary`}>💊</div>
             </div>
           </CardContent>
         </Card>
