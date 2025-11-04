@@ -221,7 +221,7 @@ export default function PatientDashboard() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 p-8">
+      <div className="min-h-screen theme-gradient-bg p-8">
         <DashboardSkeleton />
       </div>
     )
