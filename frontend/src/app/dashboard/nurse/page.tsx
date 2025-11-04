@@ -187,7 +187,7 @@ export default function NurseDashboard() {
 
   if (error) {
     return (
-      <div className={`min-h-screen flex items-center justify-center ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20' : 'bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50'}`}>
+      <div className="min-h-screen flex items-center justify-center theme-gradient-bg">
         <div className={`text-center glass backdrop-blur-xl border shadow-2xl rounded-2xl p-8 ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
           <h1 className={`text-2xl font-bold mb-2 ${isDark ? 'text-error-400' : 'text-error-600'}`}>Error</h1>
           <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{error}</p>
