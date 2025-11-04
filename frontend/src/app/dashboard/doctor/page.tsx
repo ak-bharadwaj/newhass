@@ -459,7 +459,7 @@ export default function DoctorDashboard() {
               <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border theme-btn-primary theme-border`}>
                 Live
               </span>
-              <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border ${isDark ? 'bg-gray-800/40 text-gray-300 border-gray-700/50' : 'bg-gray-50 text-gray-700 border-gray-200'}`}>
+              <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border theme-card theme-text-secondary theme-border`}>
                 {new Date().toLocaleDateString()}
               </span>
             </div>
