@@ -645,39 +645,39 @@ export default function DoctorDashboard() {
                     className="space-y-6"
                   >
                     {/* Patient Header */}
-                    <div className={`glass backdrop-blur-xl rounded-2xl shadow-xl p-6 border ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
+                    <StandardCard>
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
-                          <h2 className={`text-2xl font-bold flex items-center gap-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg ${isDark ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white' : 'bg-gradient-to-br from-primary-500 to-primary-600 text-white'}`}>
+                          <h2 className="text-2xl font-bold flex items-center gap-3 theme-text-primary">
+                            <div className="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg theme-gradient-primary theme-text-primary">
                               {selectedPatient.first_name[0]}{selectedPatient.last_name[0]}
                             </div>
                             {selectedPatient.first_name} {selectedPatient.last_name}
                           </h2>
-                          <div className={`flex items-center gap-4 mt-3 text-sm flex-wrap ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                            <span className={`px-3 py-1 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>MRN: {selectedPatient.mrn}</span>
-                            <span className={`px-3 py-1 rounded-full capitalize ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>{selectedPatient.gender}</span>
-                            <span className={`px-3 py-1 rounded-full ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>DOB: {new Date(selectedPatient.date_of_birth).toLocaleDateString()}</span>
+                          <div className="flex items-center gap-4 mt-3 text-sm flex-wrap theme-text-secondary">
+                            <span className="px-3 py-1 rounded-full theme-card">MRN: {selectedPatient.mrn}</span>
+                            <span className="px-3 py-1 rounded-full capitalize theme-card">{selectedPatient.gender}</span>
+                            <span className="px-3 py-1 rounded-full theme-card">DOB: {new Date(selectedPatient.date_of_birth).toLocaleDateString()}</span>
                             {selectedPatient.blood_group && (
-                              <span className="px-3 py-1 bg-error-50 text-error-700 rounded-full font-medium">Blood: {selectedPatient.blood_group}</span>
+                              <span className="px-3 py-1 theme-btn-error text-white rounded-full font-medium">Blood: {selectedPatient.blood_group}</span>
                             )}
                             {dischargePending && (
-                              <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-800 font-semibold">Discharge request pending</span>
+                              <span className="px-3 py-1 rounded-full theme-btn-warning text-white font-semibold">Discharge request pending</span>
                             )}
                           </div>
                           {selectedPatient.allergies && (
-                            <div className="mt-3 px-4 py-2 bg-error-50 border-l-4 border-error-500 rounded-lg inline-block">
-                              <p className="text-sm font-medium text-error-700">⚠️ Allergies: {selectedPatient.allergies}</p>
+                            <div className="mt-3 px-4 py-2 theme-btn-error-subtle border-l-4 border-error-500 rounded-lg inline-block">
+                              <p className="text-sm font-medium theme-text-error">⚠️ Allergies: {selectedPatient.allergies}</p>
                             </div>
                           )}
                         </div>
                         <div className="ml-4">
-                          <Link href={`/dashboard/doctor/patients/${selectedPatient.id}`} className="px-4 py-2 rounded-xl bg-white border border-white/60 shadow hover:shadow-md text-primary-700 font-medium">
+                          <Link href={`/dashboard/doctor/patients/${selectedPatient.id}`} className="px-4 py-2 rounded-xl theme-btn-primary text-white font-medium">
                             View Full Record
                           </Link>
                         </div>
                       </div>
-                    </div>
+                    </StandardCard>
 
                     {/* Quick Actions */}
                     <motion.div
