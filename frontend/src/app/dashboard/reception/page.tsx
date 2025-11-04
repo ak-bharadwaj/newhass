@@ -68,7 +68,7 @@ export default function ReceptionDashboard() {
   const loadDoctors = async () => {
     if (!token || !user?.hospital_id) return
     try {
-  const response = await fetch(`${apiClient['baseURL']}/api/v1/users?hospital_id=${user.hospital_id}&role=doctor`, {
+      const response = await fetch(`${apiClient['baseURL']}/api/v1/users?hospital_id=${user.hospital_id}&role=doctor`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
