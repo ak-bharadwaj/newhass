@@ -45,50 +45,48 @@ export default function NurseCaseSheetsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8">
-        <DashboardSkeleton />
-      </div>
+      <EnterpriseDashboardLayout role="nurse">
+        <StandardDashboardLayout title="Case Sheets" subtitle="Inpatient case sheets (read-only)">
+          <DashboardSkeleton />
+        </StandardDashboardLayout>
+      </EnterpriseDashboardLayout>
     )
   }
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-        <div className="text-center glass bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl rounded-2xl p-8">
-          <h1 className="text-2xl font-bold text-error-600 mb-2">Error</h1>
-          <p className="text-gray-600 mb-4">{error}</p>
-          <Link href="/dashboard/nurse">
-            <FeedbackButton variant="primary">Back to Dashboard</FeedbackButton>
-          </Link>
-        </div>
-      </div>
+      <EnterpriseDashboardLayout role="nurse">
+        <StandardDashboardLayout title="Case Sheets">
+          <StandardCard className="text-center py-12">
+            <h1 className="text-2xl font-bold theme-text-error mb-2">Error</h1>
+            <p className="theme-text-secondary mb-4">{error}</p>
+            <Link href="/dashboard/nurse">
+              <FeedbackButton variant="primary">Back to Dashboard</FeedbackButton>
+            </Link>
+          </StandardCard>
+        </StandardDashboardLayout>
+      </EnterpriseDashboardLayout>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-      <div className="glass bg-white/80 backdrop-blur-xl border-b border-white/50 sticky top-0 z-10 shadow-lg">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Case Sheets</h1>
-            <p className="text-sm text-gray-600 mt-1">Inpatient case sheets (read-only)</p>
-          </div>
-          <div className="flex gap-2">
-            <Link href="/dashboard/nurse">
-              <FeedbackButton variant="ghost">Nurse Home</FeedbackButton>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-6 py-6">
+    <EnterpriseDashboardLayout role="nurse">
+      <StandardDashboardLayout
+        title="Case Sheets"
+        subtitle="Inpatient case sheets (read-only)"
+        actions={
+          <Link href="/dashboard/nurse">
+            <FeedbackButton variant="ghost">Nurse Home</FeedbackButton>
+          </Link>
+        }
+      >
         {caseSheets.length === 0 ? (
-          <div className="glass bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl p-12 border border-white/50 text-center">
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">No Case Sheets</h2>
-            <p className="text-gray-600">No inpatient case sheets found.</p>
-          </div>
+          <StandardCard className="text-center py-12">
+            <h2 className="text-xl font-semibold theme-text-primary mb-2">No Case Sheets</h2>
+            <p className="theme-text-secondary">No inpatient case sheets found.</p>
+          </StandardCard>
         ) : (
-          <div className="glass bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl p-6 border border-white/50">
+          <StandardCard>
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead>
@@ -103,12 +101,12 @@ export default function NurseCaseSheetsPage() {
                 <tbody className="bg-white/60 divide-y divide-gray-200">
                   {caseSheets.map((cs) => (
                     <tr key={cs.id} className="hover:bg-white/80">
-                      <td className="px-4 py-3 font-medium text-gray-900">{cs.case_number}</td>
-                      <td className="px-4 py-3 text-gray-700">{cs.patient_id}</td>
-                      <td className="px-4 py-3 text-gray-700">{new Date(cs.admission_date).toLocaleDateString()}</td>
-                      <td className="px-4 py-3 text-gray-700 truncate max-w-[300px]">{cs.chief_complaint}</td>
+                      <td className="px-4 py-3 font-medium theme-text-primary">{cs.case_number}</td>
+                      <td className="px-4 py-3 theme-text-secondary">{cs.patient_id}</td>
+                      <td className="px-4 py-3 theme-text-secondary">{new Date(cs.admission_date).toLocaleDateString()}</td>
+                      <td className="px-4 py-3 theme-text-secondary truncate max-w-[300px]">{cs.chief_complaint}</td>
                       <td className="px-4 py-3 text-right">
-                        <Link href={`/dashboard/nurse/case-sheets/${cs.id}`} className="text-primary-600 hover:text-primary-700 font-medium">
+                        <Link href={`/dashboard/nurse/case-sheets/${cs.id}`} className="theme-btn-primary text-white px-3 py-1 rounded-lg text-sm font-medium">
                           View
                         </Link>
                       </td>
@@ -117,9 +115,9 @@ export default function NurseCaseSheetsPage() {
                 </tbody>
               </table>
             </div>
-          </div>
+          </StandardCard>
         )}
-      </div>
-    </div>
+      </StandardDashboardLayout>
+    </EnterpriseDashboardLayout>
   )
 }
