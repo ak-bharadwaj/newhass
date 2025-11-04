@@ -406,7 +406,126 @@ button, a, input, select, textarea {
   color: rgb(var(--color-primary-foreground));
 }
 
+.theme-btn-success {
+  background-color: rgb(var(--color-success));
+  color: rgb(var(--color-success-foreground));
+}
+
+.theme-btn-warning {
+  background-color: rgb(var(--color-warning));
+  color: rgb(var(--color-warning-foreground));
+}
+
+.theme-btn-error {
+  background-color: rgb(var(--color-error));
+  color: rgb(var(--color-error-foreground));
+}
+
+.theme-btn-accent {
+  background-color: rgb(var(--color-accent));
+  color: rgb(var(--color-accent-foreground));
+}
+
 .theme-glass { background: rgba(var(--color-background), 0.6); backdrop-filter: blur(12px); }
+
+/* ============================================
+   CONSISTENT GRADIENT CLASSES FOR ALL DASHBOARDS
+   ============================================ */
+
+/* Primary gradients - Blue theme */
+.theme-gradient-primary {
+  background: linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-primary-dark)) 100%);
+}
+
+.theme-gradient-primary-light {
+  background: linear-gradient(135deg, rgb(var(--color-primary-light)) 0%, rgb(var(--color-primary)) 100%);
+}
+
+.theme-gradient-primary-subtle {
+  background: linear-gradient(135deg, rgba(var(--color-primary), 0.1) 0%, rgba(var(--color-primary-light), 0.05) 100%);
+}
+
+/* Success gradients - Green theme */
+.theme-gradient-success {
+  background: linear-gradient(135deg, rgb(var(--color-success)) 0%, rgb(var(--color-success-dark)) 100%);
+}
+
+.theme-gradient-success-light {
+  background: linear-gradient(135deg, rgb(var(--color-success-light)) 0%, rgb(var(--color-success)) 100%);
+}
+
+.theme-gradient-success-subtle {
+  background: linear-gradient(135deg, rgba(var(--color-success), 0.1) 0%, rgba(var(--color-success-light), 0.05) 100%);
+}
+
+/* Warning gradients - Amber/Yellow theme */
+.theme-gradient-warning {
+  background: linear-gradient(135deg, rgb(var(--color-warning)) 0%, rgb(var(--color-warning-dark)) 100%);
+}
+
+.theme-gradient-warning-light {
+  background: linear-gradient(135deg, rgb(var(--color-warning-light)) 0%, rgb(var(--color-warning)) 100%);
+}
+
+.theme-gradient-warning-subtle {
+  background: linear-gradient(135deg, rgba(var(--color-warning), 0.1) 0%, rgba(var(--color-warning-light), 0.05) 100%);
+}
+
+/* Error gradients - Red theme */
+.theme-gradient-error {
+  background: linear-gradient(135deg, rgb(var(--color-error)) 0%, rgb(var(--color-error-dark)) 100%);
+}
+
+.theme-gradient-error-light {
+  background: linear-gradient(135deg, rgb(var(--color-error-light)) 0%, rgb(var(--color-error)) 100%);
+}
+
+.theme-gradient-error-subtle {
+  background: linear-gradient(135deg, rgba(var(--color-error), 0.1) 0%, rgba(var(--color-error-light), 0.05) 100%);
+}
+
+/* Accent gradients - Purple theme */
+.theme-gradient-accent {
+  background: linear-gradient(135deg, rgb(var(--color-accent)) 0%, rgb(var(--color-accent-dark)) 100%);
+}
+
+.theme-gradient-accent-light {
+  background: linear-gradient(135deg, rgb(var(--color-accent-light)) 0%, rgb(var(--color-accent)) 100%);
+}
+
+.theme-gradient-accent-subtle {
+  background: linear-gradient(135deg, rgba(var(--color-accent), 0.1) 0%, rgba(var(--color-accent-light), 0.05) 100%);
+}
+
+/* Background gradients */
+.theme-gradient-bg {
+  background: linear-gradient(135deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-end-rgb)) 100%);
+}
+
+.theme-gradient-bg-reverse {
+  background: linear-gradient(135deg, rgb(var(--background-end-rgb)) 0%, rgb(var(--background-start-rgb)) 100%);
+}
+
+/* Glass gradients with theme colors */
+.theme-gradient-glass-primary {
+  background: linear-gradient(135deg, rgba(var(--color-primary), 0.15) 0%, rgba(var(--color-primary-light), 0.05) 100%);
+  backdrop-filter: blur(16px);
+}
+
+.theme-gradient-glass-success {
+  background: linear-gradient(135deg, rgba(var(--color-success), 0.15) 0%, rgba(var(--color-success-light), 0.05) 100%);
+  backdrop-filter: blur(16px);
+}
+
+.theme-gradient-glass-warning {
+  background: linear-gradient(135deg, rgba(var(--color-warning), 0.15) 0%, rgba(var(--color-warning-light), 0.05) 100%);
+  backdrop-filter: blur(16px);
+}
+
+.theme-gradient-glass-accent {
+  background: linear-gradient(135deg, rgba(var(--color-accent), 0.15) 0%, rgba(var(--color-accent-light), 0.05) 100%);
+  backdrop-filter: blur(16px);
+}
 
 /* ============================================
    SCREEN READER ONLY
