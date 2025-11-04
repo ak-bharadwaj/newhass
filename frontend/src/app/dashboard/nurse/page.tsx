@@ -290,7 +290,7 @@ export default function NurseDashboard() {
                     </FeedbackButton>
                     <FeedbackButton
                       onClick={() => setShowVoiceInput(true)}
-                      disabled={!selectedPatient}
+                      disabled={!selectedPatient || isLoading}
                       variant="primary"
                       className={`shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all ${isDark ? 'bg-gradient-to-br from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800' : 'bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700'}`}
                     >
