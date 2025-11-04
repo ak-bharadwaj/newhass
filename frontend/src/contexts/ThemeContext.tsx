@@ -104,6 +104,39 @@ export function ThemeProvider({
     return () => mediaQuery.removeEventListener('change', handler)
   }, [mode])
 
+  // Theme validation function
+  const validateThemeApplication = () => {
+    const root = document.documentElement
+    const computedStyle = getComputedStyle(root)
+
+    // Check if CSS variables are properly applied
+    const primaryColor = computedStyle.getPropertyValue('--color-primary').trim()
+    const backgroundColor = computedStyle.getPropertyValue('--color-background').trim()
+    const foregroundColor = computedStyle.getPropertyValue('--color-foreground').trim()
+
+    const issues = []
+
+    if (!primaryColor) issues.push('Primary color variable not set')
+    if (!backgroundColor) issues.push('Background color variable not set')
+    if (!foregroundColor) issues.push('Foreground color variable not set')
+
+    // Check class consistency
+    const hasLightClass = root.classList.contains('light')
+    const hasDarkClass = root.classList.contains('dark')
+    const hasHighContrast = root.classList.contains('high-contrast')
+
+    if (colorScheme === 'light' && !hasLightClass) issues.push('Light class not applied')
+    if (colorScheme === 'dark' && !hasDarkClass) issues.push('Dark class not applied')
+    if (accessibility.highContrast && !hasHighContrast) issues.push('High contrast class not applied')
+
+    if (issues.length > 0) {
+      console.warn('Theme validation issues:', issues)
+      return false
+    }
+
+    return true
+  }
+
   // Apply theme to document
   useEffect(() => {
     const root = document.documentElement
@@ -126,6 +159,18 @@ export function ThemeProvider({
         'content',
         colorScheme === 'dark' ? '#1a202c' : '#ffffff'
       )
+    }
+
+    // Validate theme application (development only)
+    if (process.env.NODE_ENV === 'development') {
+      setTimeout(() => {
+        if (!validateThemeApplication()) {
+          console.error('Theme validation failed - attempting to fix...')
+          // Force theme re-application
+          root.classList.remove('light', 'dark')
+          root.classList.add(colorScheme)
+        }
+      }, 100)
     }
   }, [colorScheme, accessibility])
 
