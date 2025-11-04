@@ -206,10 +206,10 @@ export default function ReceptionDashboard() {
 
   if (!user || user.role_name !== 'reception') {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center theme-gradient-bg">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Access Denied</h1>
-          <p className="text-gray-600">You must be reception staff to access this dashboard.</p>
+          <h1 className="text-2xl font-bold mb-2 theme-text-primary">Access Denied</h1>
+          <p className="theme-text-secondary">You must be reception staff to access this dashboard.</p>
         </div>
       </div>
     )
