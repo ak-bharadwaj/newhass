@@ -478,7 +478,7 @@ export default function DoctorDashboard() {
           <FeedbackButton onClick={() => setShowNotesModal(true)} variant="ghost" className="shadow-sm bg-white">
             📝 Add Notes
           </FeedbackButton>
-          <FeedbackButton onClick={() => setShowDischargeModal(true)} variant="ghost" className="shadow-sm bg-gradient-to-br from-success-50 to-success-100 text-success-700">
+          <FeedbackButton onClick={() => setShowDischargeModal(true)} variant="ghost" className="shadow-sm theme-btn-success">
             🚪 Discharge Patient
           </FeedbackButton>
           <div className="ml-auto flex items-center gap-2">
