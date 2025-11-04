@@ -257,7 +257,7 @@ export default function PatientDashboard() {
 
   return (
     <EnterpriseDashboardLayout role="patient">
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/20 dark:from-gray-900 dark:via-blue-900/10 dark:to-purple-900/10 p-6">
+      <div className="min-h-screen theme-gradient-bg p-6">
       <div className="max-w-7xl mx-auto">
         {/* Regional Banner */}
         <RegionalBanner />
