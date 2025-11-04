@@ -448,7 +448,7 @@ export default function DoctorDashboard() {
         <div className="mb-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
-              <h1 className={`text-3xl md:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent mb-1 ${isDark ? 'bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400' : 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'}`}>
+              <h1 className={`text-3xl md:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent mb-1 theme-gradient-primary`}>
                 Doctor Dashboard
               </h1>
               <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
