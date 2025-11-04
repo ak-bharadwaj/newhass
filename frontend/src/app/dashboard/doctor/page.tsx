@@ -445,89 +445,69 @@ export default function DoctorDashboard() {
       <RealTimeAlerts />
       <SSEConnectionStatus isConnected={isConnected} />
 
-      {/* Welcome Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div>
-              <h1 className={`text-3xl md:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent mb-1 theme-gradient-primary`}>
-                Doctor Dashboard
-              </h1>
-              <p className="theme-text-secondary">
-                Welcome, Dr. {user.first_name} {user.last_name}
-              </p>
+      <StandardDashboardLayout
+        title="Doctor Dashboard"
+        subtitle={`Welcome, Dr. ${user.first_name} ${user.last_name}`}
+        chips={[
+          { label: 'Live', color: 'blue' },
+          { label: new Date().toLocaleDateString() }
+        ]}
+        actions={
+          <>
+            <FeedbackButton onClick={() => setShowPrescriptionModal(true)} variant="primary" className="shadow-sm">
+              💊 Create Prescription
+            </FeedbackButton>
+            <FeedbackButton onClick={() => setShowLabTestModal(true)} variant="secondary" className="shadow-sm">
+              🔬 Order Lab Test
+            </FeedbackButton>
+            <FeedbackButton onClick={() => setShowNotesModal(true)} variant="ghost" className="shadow-sm bg-white">
+              📝 Add Notes
+            </FeedbackButton>
+            <FeedbackButton onClick={() => setShowDischargeModal(true)} variant="ghost" className="shadow-sm theme-btn-success">
+              🚪 Discharge Patient
+            </FeedbackButton>
+            <div className="ml-auto flex items-center gap-2">
+              <Link href="/dashboard/doctor/patients" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Patients</Link>
+              <Link href="/dashboard/doctor/appointments" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Appointments</Link>
+              <Link href="/dashboard/doctor/prescriptions" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Prescriptions</Link>
             </div>
-            <div className="flex items-center gap-2">
-              <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border theme-btn-primary theme-border`}>
-                Live
-              </span>
-              <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border theme-card theme-text-secondary theme-border`}>
-                {new Date().toLocaleDateString()}
-              </span>
-            </div>
-          </div>
-        </div>
-
-      {/* Sticky Quick Actions (primary) */}
-      <div className="hidden md:block sticky top-2 z-20 mb-6">
-        <div className={`flex flex-wrap gap-3 p-3 rounded-xl border shadow-sm ${isDark ? 'bg-slate-900/70 border-slate-800' : 'bg-white/80 border-gray-200 backdrop-blur-md'}`}>
-          <FeedbackButton onClick={() => setShowPrescriptionModal(true)} variant="primary" className="shadow-sm">
-            💊 Create Prescription
-          </FeedbackButton>
-          <FeedbackButton onClick={() => setShowLabTestModal(true)} variant="secondary" className="shadow-sm">
-            🔬 Order Lab Test
-          </FeedbackButton>
-          <FeedbackButton onClick={() => setShowNotesModal(true)} variant="ghost" className="shadow-sm bg-white">
-            📝 Add Notes
-          </FeedbackButton>
-          <FeedbackButton onClick={() => setShowDischargeModal(true)} variant="ghost" className="shadow-sm theme-btn-success">
-            🚪 Discharge Patient
-          </FeedbackButton>
-          <div className="ml-auto flex items-center gap-2">
-            <Link href="/dashboard/doctor/patients" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Patients</Link>
-            <Link href="/dashboard/doctor/appointments" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Appointments</Link>
-            <Link href="/dashboard/doctor/prescriptions" className="px-3 py-2 text-sm rounded-lg theme-card theme-text-primary hover:theme-btn-primary hover:text-white transition-colors">Prescriptions</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Stats Cards with animated counters */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="theme-text-secondary">Patients Under Care</p>
-                <AnimatedNumber value={patients.length} className="text-3xl font-bold theme-text-primary" />
-              </div>
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-primary-subtle theme-text-primary`}>👩‍⚕️</div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-6">
-            <Link href="/dashboard/doctor/case-sheets" className="block">
+          </>
+        }
+        showStats={true}
+        stats={
+          <>
+            <StandardCard hover>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="theme-text-secondary">Case Sheets</p>
-                  <p className="text-3xl font-bold theme-text-primary">View</p>
+                  <p className="theme-text-secondary">Patients Under Care</p>
+                  <AnimatedNumber value={patients.length} className="text-3xl font-bold theme-text-primary" />
                 </div>
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-success-subtle theme-text-primary`}>📄</div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-primary-subtle theme-text-primary">👩‍⚕️</div>
               </div>
-            </Link>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="theme-text-secondary">Pending Rx (Selected)</p>
-                <AnimatedNumber value={prescriptions.filter(p => p.status === 'pending').length} className="text-3xl font-bold theme-text-primary" />
+            </StandardCard>
+            <StandardCard hover>
+              <Link href="/dashboard/doctor/case-sheets" className="block">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="theme-text-secondary">Case Sheets</p>
+                    <p className="text-3xl font-bold theme-text-primary">View</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-success-subtle theme-text-primary">📄</div>
+                </div>
+              </Link>
+            </StandardCard>
+            <StandardCard hover>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="theme-text-secondary">Pending Rx (Selected)</p>
+                  <AnimatedNumber value={prescriptions.filter(p => p.status === 'pending').length} className="text-3xl font-bold theme-text-primary" />
+                </div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-accent-subtle theme-text-primary">💊</div>
               </div>
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-accent-subtle theme-text-primary`}>💊</div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+            </StandardCard>
+          </>
+        }
+      >
 
       {/* Main Content */}
       {patients.length === 0 ? (
