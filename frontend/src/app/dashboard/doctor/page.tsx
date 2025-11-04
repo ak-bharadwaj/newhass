@@ -496,7 +496,7 @@ export default function DoctorDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="theme-text-secondary">Patients Under Care</p>
-                <AnimatedNumber value={patients.length} className={`text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`} />
+                <AnimatedNumber value={patients.length} className="text-3xl font-bold theme-text-primary" />
               </div>
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl theme-gradient-primary-subtle theme-text-primary`}>👩‍⚕️</div>
             </div>
