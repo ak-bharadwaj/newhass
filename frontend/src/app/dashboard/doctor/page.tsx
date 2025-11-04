@@ -456,7 +456,7 @@ export default function DoctorDashboard() {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border ${isDark ? 'bg-blue-900/40 text-blue-300 border-blue-700/50' : 'bg-blue-50 text-blue-700 border-blue-200'}`}>
+              <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border theme-btn-primary theme-border`}>
                 Live
               </span>
               <span className={`px-3 py-1.5 rounded-full text-xs font-semibold border ${isDark ? 'bg-gray-800/40 text-gray-300 border-gray-700/50' : 'bg-gray-50 text-gray-700 border-gray-200'}`}>
