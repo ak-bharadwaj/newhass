@@ -780,19 +780,17 @@ export default function DoctorDashboard() {
                           transition={{ delay: 0.25 }}
                           className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
                         >
-                          <div className={`glass backdrop-blur-xl rounded-2xl shadow-xl p-6 border ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
-                            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Prescriptions (7 days)</h3>
+                          <StandardCard title="Prescriptions (7 days)">
                             <div className="w-full h-64">
                               <DoctorCharts rxTrend={rxTrend} vitalsSpark={vitalsSpark} />
                             </div>
-                          </div>
-                          <div className={`glass backdrop-blur-xl rounded-2xl shadow-xl p-6 border ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
-                            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Vitals Sparkline</h3>
+                          </StandardCard>
+                          <StandardCard title="Vitals Sparkline">
                             {/* Charts are lazily loaded via DoctorCharts to reduce initial bundle size */}
                             <div className="w-full h-64">
                               <DoctorCharts rxTrend={rxTrend} vitalsSpark={vitalsSpark} />
                             </div>
-                          </div>
+                          </StandardCard>
                         </motion.div>
 
                         {/* Clinical Data Grid */}
