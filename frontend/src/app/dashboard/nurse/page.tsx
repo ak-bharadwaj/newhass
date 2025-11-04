@@ -240,7 +240,7 @@ export default function NurseDashboard() {
         </div>
         <button
           onClick={() => setShowVoiceInput(true)}
-          className={`glass rounded-xl px-6 py-4 hover:scale-105 transition-transform text-left ${isDark ? 'bg-gradient-to-br from-pink-900/40 to-pink-800/40 border border-pink-700/50' : 'bg-gradient-to-br from-pink-50 to-pink-100 border border-pink-200'}`}
+          className="glass rounded-xl px-6 py-4 hover:scale-105 transition-transform text-left theme-gradient-warning"
         >
           <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>🎤 Voice Input</p>
           <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>Quick Vitals Entry</p>
