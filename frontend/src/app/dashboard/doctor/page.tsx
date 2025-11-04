@@ -816,12 +816,12 @@ export default function DoctorDashboard() {
                     )}
                   </motion.div>
                 ) : (
-                  <div className={`glass backdrop-blur-xl rounded-2xl shadow-xl p-12 border text-center ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
-                    <svg className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'text-gray-600' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <StandardCard className="text-center py-12">
+                    <svg className="w-16 h-16 mx-auto mb-4 theme-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
-                    <p className={isDark ? 'text-gray-400' : 'text-gray-600'}>Select a patient to view details</p>
-                  </div>
+                    <p className="theme-text-muted">Select a patient to view details</p>
+                  </StandardCard>
                 )}
               </AnimatePresence>
             </div>
