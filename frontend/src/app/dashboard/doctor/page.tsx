@@ -451,7 +451,7 @@ export default function DoctorDashboard() {
               <h1 className={`text-3xl md:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent mb-1 theme-gradient-primary`}>
                 Doctor Dashboard
               </h1>
-              <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
+              <p className="theme-text-secondary">
                 Welcome, Dr. {user.first_name} {user.last_name}
               </p>
             </div>
