@@ -511,25 +511,32 @@ export default function DoctorDashboard() {
 
       {/* Main Content */}
       {patients.length === 0 ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-12">
-            <div className={`glass backdrop-blur-xl rounded-2xl shadow-2xl p-12 max-w-md mx-auto ${isDark ? 'bg-gray-900/90 border border-gray-700/50' : 'bg-white/80 border border-white/50'}`}>
-              <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 ${isDark ? 'bg-primary-900/40' : 'bg-primary-100'}`}>
-                <svg className={`w-10 h-10 ${isDark ? 'text-primary-400' : 'text-primary-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h2 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>No Patients Assigned</h2>
-              <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>You currently have no patients assigned to you.</p>
+        <StandardCard className="text-center py-12">
+          <div className="max-w-md mx-auto">
+            <div className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 theme-gradient-primary-subtle`}>
+              <svg className="w-10 h-10 theme-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
             </div>
-          </motion.div>
-        ) : (
-          <div className="grid grid-cols-12 gap-6">
-            {/* Left panel - Patient list */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="col-span-12 lg:col-span-4 space-y-4"
-            >
+            <h2 className="text-xl font-bold mb-2 theme-text-primary">No Patients Assigned</h2>
+            <p className="theme-text-secondary">You currently have no patients assigned to you.</p>
+          </div>
+        </StandardCard>
+      ) : (
+        <StandardGridLayout
+          sidebarPosition="left"
+          sidebarWidth="medium"
+          sidebar={
+            <div className="space-y-4">
+              {/* Today's Schedule */}
+              <StandardCard
+                title="Today's Schedule"
+                actions={
+                  <Link href="/dashboard/doctor/appointments" className="text-xs font-semibold text-primary-600 hover:underline">
+                    View all
+                  </Link>
+                }
+              >
               {/* Today's Schedule */}
               <div className={`glass backdrop-blur-xl rounded-2xl shadow-xl p-4 border ${isDark ? 'bg-gray-900/90 border-gray-700/50' : 'bg-white/80 border-white/50'}`}>
                 <div className="flex items-center justify-between mb-3">
