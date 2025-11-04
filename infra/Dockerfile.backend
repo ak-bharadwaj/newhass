@@ -1,0 +1,51 @@
+# Multi-stage build for FastAPI backend
+FROM python:3.11-slim AS builder
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+# Production stage
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy Python dependencies from builder
+COPY --from=builder /root/.local /root/.local
+
+# Copy application code
+COPY . .
+
+# Make sure scripts are executable
+ENV PATH=/root/.local/bin:$PATH
+ENV PYTHONUNBUFFERED=1
+
+# Expose port
+EXPOSE 8000
+
+# MAXIMUM PERFORMANCE: Run with 12 workers (all CPU cores) and optimizations
+# uvloop = 2-4x faster than asyncio
+# 12 workers = handle 24k+ concurrent requests
+# Each worker handles ~2000 concurrent connections = 24,000 total
+# Copy start script and make executable
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+# Start via entry script which runs migrations before the app
+CMD ["/bin/sh", "/app/start.sh"]

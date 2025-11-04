@@ -1,0 +1,278 @@
+﻿[
+    {
+        "hospitals":  {
+                          "count":  1,
+                          "sample":  {
+                                         "name":  "North General Hospital",
+                                         "code":  "NGH001",
+                                         "address":  "123 Medical Center Dr, North City, NC 12345",
+                                         "phone":  "+1-555-0100",
+                                         "email":  "contact@northgeneral.example",
+                                         "bed_capacity":  200,
+                                         "is_active":  true,
+                                         "id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                         "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                         "created_at":  "2025-10-29T15:06:26.865513Z",
+                                         "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                         "occupied_beds":  1,
+                                         "available_beds":  8,
+                                         "staff_count":  6,
+                                         "active_patients":  33
+                                     }
+                      },
+        "admin_metrics":  {
+                              "total_patients":  33,
+                              "active_visits":  64,
+                              "open_emergencies":  0,
+                              "avg_bed_utilization":  11.11,
+                              "total_regions":  1,
+                              "total_hospitals":  1,
+                              "total_staff":  8
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "queue":  [
+
+                                   ],
+                         "total_patients":  0,
+                         "optimization_time":  "2025-11-01T11:15:53.522451",
+                         "message":  "No pending appointments"
+                     },
+        "me":  {
+                   "email":  "admin@hass.example",
+                   "id":  "4d0385c7-fe9b-487e-89cb-fdf343aa3a61",
+                   "role_name":  "super_admin"
+               },
+        "role":  "super_admin",
+        "email":  "admin@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "count":  1,
+                          "sample":  {
+                                         "name":  "North General Hospital",
+                                         "code":  "NGH001",
+                                         "address":  "123 Medical Center Dr, North City, NC 12345",
+                                         "phone":  "+1-555-0100",
+                                         "email":  "contact@northgeneral.example",
+                                         "bed_capacity":  200,
+                                         "is_active":  true,
+                                         "id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                         "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                         "created_at":  "2025-10-29T15:06:26.865513Z",
+                                         "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                         "occupied_beds":  1,
+                                         "available_beds":  8,
+                                         "staff_count":  6,
+                                         "active_patients":  33
+                                     }
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "queue":  [
+
+                                   ],
+                         "total_patients":  0,
+                         "optimization_time":  "2025-11-01T11:15:54.070353",
+                         "message":  "No pending appointments"
+                     },
+        "me":  {
+                   "email":  "radmin@hass.example",
+                   "id":  "0e875ad1-73c7-429a-8baa-9f1f15629f5f",
+                   "role_name":  "regional_admin"
+               },
+        "role":  "regional_admin",
+        "email":  "radmin@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "count":  1,
+                          "sample":  {
+                                         "name":  "North General Hospital",
+                                         "code":  "NGH001",
+                                         "address":  "123 Medical Center Dr, North City, NC 12345",
+                                         "phone":  "+1-555-0100",
+                                         "email":  "contact@northgeneral.example",
+                                         "bed_capacity":  200,
+                                         "is_active":  true,
+                                         "id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                         "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                         "created_at":  "2025-10-29T15:06:26.865513Z",
+                                         "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                         "occupied_beds":  1,
+                                         "available_beds":  8,
+                                         "staff_count":  6,
+                                         "active_patients":  33
+                                     }
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "queue":  [
+
+                                   ],
+                         "total_patients":  0,
+                         "optimization_time":  "2025-11-01T11:15:54.627852",
+                         "message":  "No pending appointments"
+                     },
+        "me":  {
+                   "email":  "manager@hass.example",
+                   "id":  "4126a8b3-6458-4a10-8a2f-6e188ca16e7c",
+                   "role_name":  "manager"
+               },
+        "role":  "manager",
+        "email":  "manager@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "queue":  [
+
+                                   ],
+                         "total_patients":  0,
+                         "optimization_time":  "2025-11-01T11:15:55.175655",
+                         "message":  "No pending appointments"
+                     },
+        "me":  {
+                   "email":  "doctor@hass.example",
+                   "id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                   "role_name":  "doctor"
+               },
+        "role":  "doctor",
+        "email":  "doctor@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "queue":  [
+
+                                   ],
+                         "total_patients":  0,
+                         "optimization_time":  "2025-11-01T11:15:55.718713",
+                         "message":  "No pending appointments"
+                     },
+        "me":  {
+                   "email":  "nurse@hass.example",
+                   "id":  "75a684a0-78e9-4d59-8bf0-6e3aaf3222c3",
+                   "role_name":  "nurse"
+               },
+        "role":  "nurse",
+        "email":  "nurse@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                     },
+        "me":  {
+                   "email":  "lab@hass.example",
+                   "id":  "388d54b4-df76-4474-9cb8-330b0ab6f48c",
+                   "role_name":  "lab_tech"
+               },
+        "role":  "lab_tech",
+        "email":  "lab@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                     },
+        "me":  {
+                   "email":  "pharma@hass.example",
+                   "id":  "d89bb975-77a0-498b-ae42-d2ae7451b046",
+                   "role_name":  "pharmacist"
+               },
+        "role":  "pharmacist",
+        "email":  "pharma@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "queue":  [
+
+                                   ],
+                         "total_patients":  0,
+                         "optimization_time":  "2025-11-01T11:15:57.345957",
+                         "message":  "No pending appointments"
+                     },
+        "me":  {
+                   "email":  "reception@hass.example",
+                   "id":  "ac8cb122-e73e-44fa-881b-fe3f518bad0a",
+                   "role_name":  "reception"
+               },
+        "role":  "reception",
+        "email":  "reception@hass.example"
+    },
+    {
+        "hospitals":  {
+                          "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                      },
+        "admin_metrics":  {
+                              "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                          },
+        "login":  {
+                      "success":  true
+                  },
+        "ai_queue":  {
+                         "error":  "Forbidden - The remote server returned an error: (403) Forbidden."
+                     },
+        "me":  {
+                   "email":  "patient@hass.example",
+                   "id":  "e6f19a77-d374-44d7-85d6-cb0b7cbe6c26",
+                   "role_name":  "patient"
+               },
+        "role":  "patient",
+        "email":  "patient@hass.example"
+    }
+]

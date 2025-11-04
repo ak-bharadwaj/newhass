@@ -1,0 +1,464 @@
+﻿[
+    {
+        "checks":  {
+                       "regions":  {
+                                       "count":  1,
+                                       "sample":  {
+                                                      "name":  "North Region",
+                                                      "code":  "NORTH",
+                                                      "theme_settings":  {
+                                                                             "logo_url":  "https://example.com/north-logo.png",
+                                                                             "primary_color":  "#1976d2",
+                                                                             "secondary_color":  "#dc004e"
+                                                                         },
+                                                      "is_active":  true,
+                                                      "id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                                      "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                      "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                                      "hospitals_count":  1,
+                                                      "active_beds":  1,
+                                                      "total_staff":  7,
+                                                      "total_patients":  33
+                                                  }
+                                   },
+                       "global_metrics":  {
+                                              "total_patients":  33,
+                                              "active_visits":  64,
+                                              "open_emergencies":  0,
+                                              "avg_bed_utilization":  11.11,
+                                              "total_regions":  1,
+                                              "total_hospitals":  1,
+                                              "total_staff":  8
+                                          },
+                       "users":  {
+                                     "total":  9,
+                                     "sample":  {
+                                                    "email":  "doctor@hass.example",
+                                                    "first_name":  "Dr. Sarah",
+                                                    "last_name":  "Johnson",
+                                                    "phone":  null,
+                                                    "is_active":  true,
+                                                    "id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                                                    "role_id":  "c6326898-8994-46d0-b892-679ad7198caf",
+                                                    "role_name":  "doctor",
+                                                    "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                                    "region_name":  "North Region",
+                                                    "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                    "hospital_name":  "North General Hospital",
+                                                    "is_deleted":  false,
+                                                    "last_login":  "2025-11-01T11:34:40.328857Z",
+                                                    "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                    "updated_at":  "2025-11-01T11:34:39.724215Z"
+                                                }
+                                 },
+                       "hospitals":  {
+                                         "count":  1,
+                                         "sample":  {
+                                                        "name":  "North General Hospital",
+                                                        "code":  "NGH001",
+                                                        "address":  "123 Medical Center Dr, North City, NC 12345",
+                                                        "phone":  "+1-555-0100",
+                                                        "email":  "contact@northgeneral.example",
+                                                        "bed_capacity":  200,
+                                                        "is_active":  true,
+                                                        "id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                        "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                                        "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                        "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                                        "occupied_beds":  1,
+                                                        "available_beds":  8,
+                                                        "staff_count":  6,
+                                                        "active_patients":  33
+                                                    }
+                                     }
+                   },
+        "me":  {
+                   "email":  "admin@hass.example",
+                   "hospital_id":  null,
+                   "region_id":  null,
+                   "id":  "4d0385c7-fe9b-487e-89cb-fdf343aa3a61",
+                   "role_name":  "super_admin"
+               },
+        "role":  "super_admin",
+        "login":  {
+                      "success":  true
+                  },
+        "email":  "admin@hass.example"
+    },
+    {
+        "checks":  {
+                       "regions":  {
+                                       "count":  1,
+                                       "sample":  {
+                                                      "name":  "North Region",
+                                                      "code":  "NORTH",
+                                                      "theme_settings":  {
+                                                                             "logo_url":  "https://example.com/north-logo.png",
+                                                                             "primary_color":  "#1976d2",
+                                                                             "secondary_color":  "#dc004e"
+                                                                         },
+                                                      "is_active":  true,
+                                                      "id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                                      "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                      "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                                      "hospitals_count":  1,
+                                                      "active_beds":  1,
+                                                      "total_staff":  7,
+                                                      "total_patients":  33
+                                                  }
+                                   },
+                       "region_hospitals":  {
+                                                "count":  1,
+                                                "sample":  {
+                                                               "name":  "North General Hospital",
+                                                               "code":  "NGH001",
+                                                               "address":  "123 Medical Center Dr, North City, NC 12345",
+                                                               "phone":  "+1-555-0100",
+                                                               "email":  "contact@northgeneral.example",
+                                                               "bed_capacity":  200,
+                                                               "is_active":  true,
+                                                               "id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                               "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                                                               "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                               "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                                               "occupied_beds":  1,
+                                                               "available_beds":  8,
+                                                               "staff_count":  6,
+                                                               "active_patients":  33
+                                                           }
+                                            }
+                   },
+        "me":  {
+                   "email":  "radmin@hass.example",
+                   "hospital_id":  null,
+                   "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                   "id":  "0e875ad1-73c7-429a-8baa-9f1f15629f5f",
+                   "role_name":  "regional_admin"
+               },
+        "role":  "regional_admin",
+        "login":  {
+                      "success":  true
+                  },
+        "email":  "radmin@hass.example"
+    },
+    {
+        "checks":  {
+                       "beds":  {
+                                    "count":  9,
+                                    "sample":  {
+                                                   "bed_number":  "101",
+                                                   "ward":  "General Ward",
+                                                   "floor":  "1",
+                                                   "bed_type":  "standard",
+                                                   "id":  "8a7d1c88-e7fd-4553-8cd5-6026e5d20fcb",
+                                                   "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                   "hospital_name":  "North General Hospital",
+                                                   "status":  "occupied",
+                                                   "assigned_patient_id":  "9f541da4-750a-41cd-bf25-eff9a87f28e1",
+                                                   "assigned_patient_name":  "John Smith",
+                                                   "assigned_patient_mrn":  "MRN001234",
+                                                   "assigned_visit_id":  "2736593f-0d3f-4ac7-8c8e-98c8981bd73b",
+                                                   "assigned_at":  "2025-10-27T15:06:33.153276Z",
+                                                   "is_active":  true,
+                                                   "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                   "updated_at":  "2025-10-29T15:06:26.865513Z"
+                                               }
+                                },
+                       "appointments":  {
+                                            "count":  1,
+                                            "sample":  {
+                                                           "scheduled_at":  "2025-11-06T01:06:34.534194Z",
+                                                           "duration_minutes":  30,
+                                                           "appointment_type":  "follow-up",
+                                                           "reason":  "Follow-up checkup",
+                                                           "notes":  null,
+                                                           "id":  "89529724-902c-4165-96ac-6bf20890745f",
+                                                           "patient_id":  "9f541da4-750a-41cd-bf25-eff9a87f28e1",
+                                                           "patient_name":  "John Smith",
+                                                           "patient_mrn":  "MRN001234",
+                                                           "patient_phone":  "+1-555-0199",
+                                                           "doctor_id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                                                           "doctor_name":  "Dr. Dr. Sarah Johnson",
+                                                           "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                           "hospital_name":  "North General Hospital",
+                                                           "status":  "scheduled",
+                                                           "checked_in_at":  null,
+                                                           "cancelled_at":  null,
+                                                           "cancellation_reason":  null,
+                                                           "created_by_id":  "ac8cb122-e73e-44fa-881b-fe3f518bad0a",
+                                                           "created_by_name":  "Reception Desk",
+                                                           "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                           "updated_at":  "2025-10-29T15:06:26.865513Z"
+                                                       }
+                                        },
+                       "my_patients":  {
+                                           "error":  "The remote server returned an error: (403) Forbidden."
+                                       }
+                   },
+        "me":  {
+                   "email":  "manager@hass.example",
+                   "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                   "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                   "id":  "4126a8b3-6458-4a10-8a2f-6e188ca16e7c",
+                   "role_name":  "manager"
+               },
+        "role":  "manager",
+        "login":  {
+                      "success":  true
+                  },
+        "email":  "manager@hass.example"
+    },
+    {
+        "checks":  {
+                       "ordered_lab_tests":  {
+                                                 "count":  5,
+                                                 "sample":  {
+                                                                "test_type":  "X-Ray",
+                                                                "urgency":  "urgent",
+                                                                "notes":  "Urgent order",
+                                                                "id":  "ad1bf38e-5c04-4072-bdf9-59d6fc3520c3",
+                                                                "patient_id":  "b7e9417e-3c71-485e-be96-c92f825948d5",
+                                                                "visit_id":  "f84de2ad-030e-44a0-bb89-ea36a87e8816",
+                                                                "requested_by_id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                                                                "requested_by_name":  "Dr. Sarah Johnson",
+                                                                "assigned_to_id":  null,
+                                                                "assigned_to_name":  null,
+                                                                "status":  "pending",
+                                                                "requested_at":  "2025-10-30T17:37:47.076097Z",
+                                                                "accepted_at":  null,
+                                                                "completed_at":  null,
+                                                                "result_file_url":  null,
+                                                                "result_summary":  null,
+                                                                "created_at":  "2025-10-30T17:37:47.076097Z",
+                                                                "updated_at":  "2025-10-30T17:37:47.076097Z"
+                                                            }
+                                             },
+                       "appointments":  {
+                                            "count":  1,
+                                            "sample":  {
+                                                           "scheduled_at":  "2025-11-06T01:06:34.534194Z",
+                                                           "duration_minutes":  30,
+                                                           "appointment_type":  "follow-up",
+                                                           "reason":  "Follow-up checkup",
+                                                           "notes":  null,
+                                                           "id":  "89529724-902c-4165-96ac-6bf20890745f",
+                                                           "patient_id":  "9f541da4-750a-41cd-bf25-eff9a87f28e1",
+                                                           "patient_name":  "John Smith",
+                                                           "patient_mrn":  "MRN001234",
+                                                           "patient_phone":  "+1-555-0199",
+                                                           "doctor_id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                                                           "doctor_name":  "Dr. Dr. Sarah Johnson",
+                                                           "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                           "hospital_name":  "North General Hospital",
+                                                           "status":  "scheduled",
+                                                           "checked_in_at":  null,
+                                                           "cancelled_at":  null,
+                                                           "cancellation_reason":  null,
+                                                           "created_by_id":  "ac8cb122-e73e-44fa-881b-fe3f518bad0a",
+                                                           "created_by_name":  "Reception Desk",
+                                                           "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                           "updated_at":  "2025-10-29T15:06:26.865513Z"
+                                                       }
+                                        },
+                       "my_patients":  {
+                                           "count":  1,
+                                           "sample":  {
+                                                          "first_name":  "John",
+                                                          "last_name":  "Smith",
+                                                          "date_of_birth":  "1985-05-15",
+                                                          "gender":  "male",
+                                                          "blood_group":  "A+",
+                                                          "phone":  "+1-555-0199",
+                                                          "email":  "patient@hass.example",
+                                                          "address":  "456 Patient St, North City, NC 12345",
+                                                          "emergency_contact_name":  "Jane Smith",
+                                                          "emergency_contact_phone":  "+1-555-0198",
+                                                          "allergies":  "Penicillin",
+                                                          "id":  "9f541da4-750a-41cd-bf25-eff9a87f28e1",
+                                                          "mrn":  "MRN001234",
+                                                          "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                          "hospital_name":  "North General Hospital",
+                                                          "user_id":  "e6f19a77-d374-44d7-85d6-cb0b7cbe6c26",
+                                                          "is_active":  true,
+                                                          "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                          "updated_at":  "2025-10-29T15:06:26.865513Z",
+                                                          "latest_temperature":  37.0,
+                                                          "latest_heart_rate":  82,
+                                                          "latest_blood_pressure":  "125/80",
+                                                          "latest_spo2":  98,
+                                                          "vitals_updated_at":  "2025-10-29T07:06:33.642303Z",
+                                                          "has_abnormal_vitals":  false
+                                                      }
+                                       }
+                   },
+        "me":  {
+                   "email":  "doctor@hass.example",
+                   "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                   "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                   "id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                   "role_name":  "doctor"
+               },
+        "role":  "doctor",
+        "login":  {
+                      "success":  true
+                  },
+        "email":  "doctor@hass.example"
+    },
+    {
+        "checks":  {
+
+                   },
+        "me":  {
+                   "email":  "nurse@hass.example",
+                   "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                   "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                   "id":  "75a684a0-78e9-4d59-8bf0-6e3aaf3222c3",
+                   "role_name":  "nurse"
+               },
+        "role":  "nurse",
+        "login":  {
+                      "error":  "Cannot overwrite variable PID because it is read-only or constant.",
+                      "success":  false
+                  },
+        "email":  "nurse@hass.example"
+    },
+    {
+        "checks":  {
+                       "lab_tests":  {
+                                         "count":  10,
+                                         "sample":  {
+                                                        "test_type":  "X-Ray",
+                                                        "urgency":  "urgent",
+                                                        "notes":  "Urgent order",
+                                                        "id":  "ad1bf38e-5c04-4072-bdf9-59d6fc3520c3",
+                                                        "patient_id":  "b7e9417e-3c71-485e-be96-c92f825948d5",
+                                                        "visit_id":  "f84de2ad-030e-44a0-bb89-ea36a87e8816",
+                                                        "requested_by_id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                                                        "requested_by_name":  "Dr. Sarah Johnson",
+                                                        "assigned_to_id":  null,
+                                                        "assigned_to_name":  null,
+                                                        "status":  "pending",
+                                                        "requested_at":  "2025-10-30T17:37:47.076097Z",
+                                                        "accepted_at":  null,
+                                                        "completed_at":  null,
+                                                        "result_file_url":  null,
+                                                        "result_summary":  null,
+                                                        "created_at":  "2025-10-30T17:37:47.076097Z",
+                                                        "updated_at":  "2025-10-30T17:37:47.076097Z"
+                                                    }
+                                     }
+                   },
+        "me":  {
+                   "email":  "lab@hass.example",
+                   "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                   "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                   "id":  "388d54b4-df76-4474-9cb8-330b0ab6f48c",
+                   "role_name":  "lab_tech"
+               },
+        "role":  "lab_tech",
+        "login":  {
+                      "success":  true
+                  },
+        "email":  "lab@hass.example"
+    },
+    {
+        "checks":  {
+                       "prescriptions":  {
+                                             "count":  1,
+                                             "sample":  {
+                                                            "medication_name":  "Lisinopril",
+                                                            "dosage":  "10mg",
+                                                            "frequency":  "once daily",
+                                                            "route":  "oral",
+                                                            "duration_days":  30,
+                                                            "start_date":  "2025-10-29",
+                                                            "end_date":  "2025-11-28",
+                                                            "instructions":  "Take in the morning with food",
+                                                            "id":  "b2fb663d-a161-48b8-89cb-e887e792fb5e",
+                                                            "patient_id":  "9f541da4-750a-41cd-bf25-eff9a87f28e1",
+                                                            "visit_id":  "2736593f-0d3f-4ac7-8c8e-98c8981bd73b",
+                                                            "prescribed_by_id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                                                            "prescribed_by_name":  "Dr. Sarah Johnson",
+                                                            "status":  "active",
+                                                            "dispensed_at":  null,
+                                                            "dispensed_by_id":  null,
+                                                            "dispensed_by_name":  null,
+                                                            "administered_at":  null,
+                                                            "administered_by_id":  null,
+                                                            "administered_by_name":  null,
+                                                            "administration_notes":  null,
+                                                            "administration_confirmed":  false,
+                                                            "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                            "updated_at":  "2025-10-29T15:06:26.865513Z"
+                                                        }
+                                         },
+                       "inventory":  {
+                                         "count":  1,
+                                         "sample":  {
+                                                        "id":  "4ef50fea-b640-4167-9d04-0686f5a995bd",
+                                                        "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                        "medication_name":  "Lisinopril 10mg",
+                                                        "quantity":  500,
+                                                        "unit":  "tablets",
+                                                        "expiry_date":  null,
+                                                        "notes":  null
+                                                    }
+                                     }
+                   },
+        "me":  {
+                   "email":  "pharma@hass.example",
+                   "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                   "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                   "id":  "d89bb975-77a0-498b-ae42-d2ae7451b046",
+                   "role_name":  "pharmacist"
+               },
+        "role":  "pharmacist",
+        "login":  {
+                      "success":  true
+                  },
+        "email":  "pharma@hass.example"
+    },
+    {
+        "checks":  {
+                       "appointments":  {
+                                            "count":  1,
+                                            "sample":  {
+                                                           "scheduled_at":  "2025-11-06T01:06:34.534194Z",
+                                                           "duration_minutes":  30,
+                                                           "appointment_type":  "follow-up",
+                                                           "reason":  "Follow-up checkup",
+                                                           "notes":  null,
+                                                           "id":  "89529724-902c-4165-96ac-6bf20890745f",
+                                                           "patient_id":  "9f541da4-750a-41cd-bf25-eff9a87f28e1",
+                                                           "patient_name":  "John Smith",
+                                                           "patient_mrn":  "MRN001234",
+                                                           "patient_phone":  "+1-555-0199",
+                                                           "doctor_id":  "f299e5bf-fe78-46a5-940d-f2fde55c91e8",
+                                                           "doctor_name":  "Dr. Dr. Sarah Johnson",
+                                                           "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                                                           "hospital_name":  "North General Hospital",
+                                                           "status":  "scheduled",
+                                                           "checked_in_at":  null,
+                                                           "cancelled_at":  null,
+                                                           "cancellation_reason":  null,
+                                                           "created_by_id":  "ac8cb122-e73e-44fa-881b-fe3f518bad0a",
+                                                           "created_by_name":  "Reception Desk",
+                                                           "created_at":  "2025-10-29T15:06:26.865513Z",
+                                                           "updated_at":  "2025-10-29T15:06:26.865513Z"
+                                                       }
+                                        }
+                   },
+        "me":  {
+                   "email":  "reception@hass.example",
+                   "hospital_id":  "9be38a3d-3242-476a-8cd6-e1c1116c3862",
+                   "region_id":  "7089fa3a-c22a-4b0e-b226-9e1b1793a49f",
+                   "id":  "ac8cb122-e73e-44fa-881b-fe3f518bad0a",
+                   "role_name":  "reception"
+               },
+        "role":  "reception",
+        "login":  {
+                      "success":  true
+                  },
+        "email":  "reception@hass.example"
+    }
+]
