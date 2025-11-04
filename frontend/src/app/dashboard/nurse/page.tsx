@@ -234,8 +234,8 @@ export default function NurseDashboard() {
         </div>
         <div className="glass rounded-xl px-6 py-4 theme-gradient-accent">
           <Link href="/dashboard/nurse/case-sheets" className="block hover:scale-105 transition-transform">
-            <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Case Sheets</p>
-            <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>View Records</p>
+            <p className="text-lg font-bold theme-text-primary">Case Sheets</p>
+            <p className="theme-text-secondary">View Records</p>
           </Link>
         </div>
         <button
