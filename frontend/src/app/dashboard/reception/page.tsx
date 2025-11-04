@@ -232,7 +232,7 @@ export default function ReceptionDashboard() {
 
   return (
     <EnterpriseDashboardLayout role="reception">
-      <div className={`min-h-screen ${isDark ? 'bg-gradient-to-br from-gray-900 via-blue-900/20 to-cyan-900/20' : 'bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50'}`}>
+      <div className="min-h-screen theme-gradient-bg">
       {/* Regional Banner */}
       <RegionalBanner />
 
