@@ -479,6 +479,7 @@ export default function NurseDashboard() {
           onClose={() => setShowVoiceInput(false)}
         />
       )}
+      </StandardDashboardLayout>
     </EnterpriseDashboardLayout>
   )
 }
