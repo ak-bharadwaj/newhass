@@ -211,7 +211,7 @@ export default function PatientDashboard() {
   if (!user || user.role_name !== 'patient') {
     return (
       <div className="min-h-screen flex items-center justify-center theme-gradient-bg">
-        <div className="text-center p-12 bg-white rounded-lg shadow-lg">
+        <div className="text-center p-12 theme-card rounded-lg shadow-lg">
           <h1 className="text-2xl font-bold mb-2">Access Denied</h1>
           <p className="text-gray-600">You must be a patient to access this portal.</p>
         </div>
@@ -230,7 +230,7 @@ export default function PatientDashboard() {
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center theme-gradient-bg">
-        <div className="text-center p-12 bg-white rounded-lg shadow-lg">
+        <div className="text-center p-12 theme-card rounded-lg shadow-lg">
           <h1 className="text-2xl font-bold text-red-600 mb-2">Error Loading Data</h1>
           <p className="text-gray-600 mb-6">{error}</p>
           <FeedbackButton
