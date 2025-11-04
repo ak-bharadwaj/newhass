@@ -3,7 +3,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { EnterpriseDashboardLayout } from '@/components/dashboard/EnterpriseDashboardLayout'
+import { StandardCard, StandardDashboardLayout } from '@/components/dashboard/StandardGridLayout'
+import { StandardDashboardLayout as StandardLayout } from '@/components/dashboard/StandardDashboardLayout'
 import { BackButton } from '@/components/common/BackButton'
+import { FeedbackButton } from '@/components/common/FeedbackButton'
 import { apiClient, type Prescription } from '@/lib/api'
 import { useAuth } from '@/contexts/AuthContext'
 
