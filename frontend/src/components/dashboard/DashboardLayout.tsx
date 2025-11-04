@@ -41,56 +41,51 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
   const [isPending, startTransition] = useTransition()
 
   const roleName = role || 'user'
-  const gradient = isDark
-    ? 'from-blue-900 via-indigo-900 to-purple-900'
-    : 'from-blue-600 via-indigo-500 to-purple-500'
-  const iconGradient = isDark
-    ? 'from-blue-900 via-indigo-900 to-purple-900'
-    : 'from-blue-500 via-indigo-500 to-purple-500'
-  const navActiveClass = `bg-gradient-to-r ${gradient} text-white shadow-lg`
+  // Use theme tokens for consistent styling across all roles
+  const navActiveClass = 'theme-btn-primary shadow-lg'
   const desktopNavHoverClass = isDark
-    ? 'text-slate-100 hover:bg-blue-500/20 hover:text-white'
-    : 'text-slate-700 hover:bg-blue-100 hover:text-blue-900'
+    ? 'theme-text-secondary hover:bg-blue-500/20 hover:text-white'
+    : 'theme-text-secondary hover:bg-blue-100 hover:text-blue-900'
   const mobileNavHoverClass = isDark
-    ? 'text-slate-100 hover:bg-blue-500/20 hover:text-white'
-    : 'text-slate-700 hover:bg-blue-100 hover:text-blue-900'
+    ? 'theme-text-secondary hover:bg-blue-500/20 hover:text-white'
+    : 'theme-text-secondary hover:bg-blue-100 hover:text-blue-900'
   const submenuHoverClass = isDark
-    ? 'text-slate-200 hover:bg-blue-500/20 hover:text-white'
-    : 'text-slate-700 hover:bg-blue-100 hover:text-blue-900'
-  const avatarGradientClass = `bg-gradient-to-br ${iconGradient}`
-  const profileHeaderClass = `bg-gradient-to-br ${gradient}`
+    ? 'theme-text-secondary hover:bg-blue-500/20 hover:text-white'
+    : 'theme-text-secondary hover:bg-blue-100 hover:text-blue-900'
+  const avatarGradientClass = 'theme-btn-primary'
+  const profileHeaderClass = 'theme-btn-primary'
   const profileButtonHoverClass = isDark ? 'hover:bg-blue-500/20' : 'hover:bg-blue-50'
   const profileMenuItemClass = isDark
-    ? 'text-slate-100 hover:bg-blue-500/20'
-    : 'text-slate-700 hover:bg-blue-100'
-  const profileNameClass = isDark ? 'text-slate-100' : 'text-slate-900'
-  const profileRoleClass = isDark ? 'text-slate-400' : 'text-slate-500'
+    ? 'theme-text-secondary hover:bg-blue-500/20'
+    : 'theme-text-secondary hover:bg-blue-100'
+  const profileNameClass = 'theme-text-primary'
+  const profileRoleClass = 'theme-text-secondary'
   const profileMenuIconClass = isDark ? 'text-blue-100' : 'text-slate-500'
-  const mobileMenuIconClass = isDark ? 'text-slate-100' : 'text-slate-700'
-  const brandTitleClass = isDark ? 'text-slate-100' : 'text-slate-900'
-  const brandSubtitleClass = isDark ? 'text-slate-400' : 'text-slate-500'
+  const mobileMenuIconClass = 'theme-text-secondary'
+  const brandTitleClass = 'theme-text-primary'
+  const brandSubtitleClass = 'theme-text-secondary'
   const topNavSurfaceClass = isDark
-    ? 'bg-slate-950/85 border border-slate-800 text-slate-100'
-    : 'bg-white/95 border border-blue-100 text-slate-700'
+    ? 'theme-glass border border-slate-800 theme-text-primary'
+    : 'theme-glass border border-blue-100 theme-text-primary'
   const dropdownSurfaceClass = isDark
-    ? 'bg-slate-900/95 border border-slate-700 text-slate-100'
-    : 'bg-white border border-blue-100 text-slate-700'
+    ? 'theme-glass border border-slate-700 theme-text-primary'
+    : 'theme-card border border-blue-100 theme-text-primary'
   const mobileMenuSurfaceClass = isDark
-    ? 'bg-slate-950/90 border-t border-slate-800'
-    : 'bg-white/95 border-t border-blue-100'
+    ? 'theme-glass border-t border-slate-800'
+    : 'theme-glass border-t border-blue-100'
   const iconButtonClass = isDark
-    ? 'bg-slate-800 text-slate-200 hover:bg-slate-700'
-    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+    ? 'theme-card hover:theme-btn-primary'
+    : 'theme-card hover:theme-btn-primary'
   const searchButtonClass = isDark
-    ? 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-  const dropdownHeadingClass = isDark ? 'text-slate-100' : 'text-slate-900'
-  const dropdownMutedClass = isDark ? 'text-slate-400' : 'text-slate-500'
+    ? 'theme-card theme-text-secondary hover:theme-surface'
+    : 'theme-card theme-text-secondary hover:theme-surface'
+  const dropdownHeadingClass = 'theme-text-primary'
+  const dropdownMutedClass = 'theme-text-secondary'
   const dropdownCardClass = isDark
-    ? 'bg-blue-500/10 hover:bg-blue-500/20 text-slate-100'
+    ? 'bg-blue-500/10 hover:bg-blue-500/20 theme-text-primary'
     : 'bg-blue-50 hover:bg-blue-100 text-blue-900'
   const dropdownDividerClass = isDark ? 'border-slate-700/60' : 'border-blue-100'
-  const pageBackgroundClass = isDark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-800'
+  const pageBackgroundClass = 'theme-bg theme-text-primary'
   const navButtonBaseClass = 'px-4 py-2 rounded-xl font-medium transition-all duration-200 flex items-center space-x-2'
   const shortcutKeyClass = isDark
     ? 'bg-white/10 text-slate-300'
