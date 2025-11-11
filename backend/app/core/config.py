@@ -16,9 +16,9 @@ class Settings(BaseSettings):
     # Database
     POSTGRES_HOST: str = "postgres"
     POSTGRES_PORT: int = 5432
-    POSTGRES_USER: str = "ak"
-    POSTGRES_PASSWORD: str = "hass_dev_password"
-    POSTGRES_DB: str = "hass_db"
+    POSTGRES_USER: str = "postgres"
+    POSTGRES_PASSWORD: str = "postgres"
+    POSTGRES_DB: str = "hospital_db"
     DATABASE_URL: Optional[str] = None
 
     @field_validator("DATABASE_URL", mode="before")
